@@ -1,0 +1,26 @@
+{
+  "name": "front-end-interview",
+  "version": "1.0.0",
+  "description": "interview for 2019",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitao123/Front-end-interview.git"
+  },
+  "keywords": [
+    "Front-end",
+    "interview"
+  ],
+  "author": "Billow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hitao123/Front-end-interview/issues"
+  },
+  "homepage": "https://github.com/hitao123/Front-end-interview#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

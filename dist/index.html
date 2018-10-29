@@ -4,10 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>PlayGround</title>
+  <style>
+    .h1 {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello</h1>
+  <h1 class="h1">PlayGround</h1>
   <script src="./js/Promise.js"></script>
+  <script src="./js/ajax.js"></script>
+  <script>
+    const a = new PromiseA((resolve, reject) => {
+      resolve(12);
+    });
+
+    const b = new PromiseA((resolve, reject) => {
+    }).then(() => {
+    })
+
+    console.log(a, new Promise(() => {
+
+    }));
+
+    Ajax({
+      method: 'GET',
+      url: 'https://cnodejs.org/api/v1/topics',
+      success: (res) => {
+        console.log(res, 'GET')
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    });
+    Ajax({
+      method: 'POST',
+      url: 'https://cnodejs.org/api/v1/topics',
+      data: {
+        accesstoken: 'ea2c3bf8-d35d-4772-af3d-a8008fc3f52e',
+        title: 'testajax',
+        tab: 'dev'
+      },
+      success: (res) => {
+        console.log(res, 'POST')
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    });
+  </script>
 </body>
 </html>

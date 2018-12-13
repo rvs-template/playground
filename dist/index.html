@@ -6,13 +6,85 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PlayGround</title>
   <style>
-    .h1 {
+    /* .h1 {
+      text-align: center;
+    } */
+    .outer {
+      width: 600px;
+      height: 600px;
+      padding:30px;
+      border: 10px solid #333;
+      margin: 30px;
+      display: table-cell;
+      vertical-align: middle;
       text-align: center;
     }
+    .inner {
+      vertical-align: middle;
+    }
+    .content {
+      display: flex;
+    }
+    .right {
+      height: 100px;
+      line-height: 100px;
+      width: 150px;
+      background-color: blue;
+    }
+    .main {
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+    }
+    .left {
+      height: 100px;
+      line-height: 100px;
+      width: 300px;
+      background-color: aqua;
+    }
+    .mint-uploader-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      margin-left: -15px;
+      border: 4px solid rgba(0, 0, 0, .1);
+      border-left-color: #f05a22;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}
   </style>
 </head>
 <body>
   <h1 class="h1">PlayGround</h1>
+  <div class="content">
+    <!-- <div class="left">left</div>
+    <div class="main">
+      <p>wwwwwwwwwwwwnjn</p>
+    </div>
+    <div class="right">right</div> -->
+    <div class="mint-uploader-loading"></div>
+    <!--登录页-->
+    <div id="login" class="component">
+      <input type="button" onclick="hashPush('index')" value="登陆">
+    </div>
+
+    <!--首页-->
+    <div id="index" class="component">
+      <input type="button" onclick="hashPush('login')" value="退出登陆">
+    </div>
+
+  </div>
   <script src="./js/Promise.js"></script>
   <script src="./js/ajax.js"></script>
   <script>
@@ -53,6 +125,21 @@
         console.log(err)
       }
     });
+  </script>
+  <script>
+    // 页面跳转
+    function hashPush(url) {
+      history.pushState({id:1}, '我是页面标题', url)
+    }
+    // window.addEventListener('hashchange', function(e) {
+    //   console.log('当前的hash地址', location.hash.slice(1) || "/")
+    // })
+
+    window.addEventListener('popstate', function (e) {
+     // e.state 就是你 pushState 的时候，传的第一个参数
+     console.log('当前的hash地址', e.target.location)
+     //  根据参数 做一些其他操作
+  })
   </script>
 </body>
 </html>

@@ -23,6 +23,7 @@ const notify = (handler, state, result) => {
 
 const notifyAll = (promise) => {
   let { handlers, state, result } = promise;
+  console.log(promise,handlers, '==>')
   while(handlers.length) {
     notify(handlers.shift(), state, result)
   }
@@ -33,7 +34,7 @@ const transition = (promise, state, result) => {
   if (promise.state !== PENDING) return
   promise.state = state;
   promise.result = result;
-  notifyAll(promise)
+  console.log(promise, '???')
 }
 
 const checkValue = (promise, value, onFulfilled, onRejected) => {

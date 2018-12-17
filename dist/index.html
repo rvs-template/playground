@@ -88,17 +88,15 @@
   <script src="./js/Promise.js"></script>
   <script src="./js/ajax.js"></script>
   <script>
-    const a = new PromiseA((resolve, reject) => {
-      resolve(12);
-    });
-
     const b = new PromiseA((resolve, reject) => {
-    }).then(() => {
+      console.log('b1')
+      return resolve(13)
+    }).then((res) => {
+      console.log('b2', res)
+    }).then((res) => {
+      console.log('b3', res)
     })
-
-    console.log(a, b, new Promise(() => {
-
-    }));
+    console.log(b)
 
     Ajax({
       method: 'GET',

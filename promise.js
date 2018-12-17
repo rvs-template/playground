@@ -20,6 +20,7 @@ function notify(handler, state, result) {
 
 function notifyAll(promise) {
   let { handles, state, result } = promise;
+  console.log(promise, '===>')
   while(handles.length) {
     notify(handles.shift(), state, result)
   }
@@ -29,6 +30,7 @@ function transition(promise, state, result) {
   if (promise.state !== PENDING) return;
   promise.state = state;
   promise.result = result; 
+  notifyAll(promise)
 }
 
 

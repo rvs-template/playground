@@ -340,3 +340,46 @@ Router.route('/green', function () {
 
 
 ```
+
+### 对基础知识的认识，原型链的认识
+
+### apply call bind 区别
+
+### 如何在 String 原型去实现一下方法
+
+### 基础类型的判断
+
+undefined
+null
+NaN
+null == undefined
+NaN == NaN
+
+### 正则的处理
+
+### 简单的库的实现
+
+### 时间捕获与冒泡 如何理解事件委托
+
+### 如何处理自适应的问题
+
+### 如何实现
+
+var doSomething = new Promise((resolve, reject) => {
+
+});
+
+var doSomethingElse = function() {
+  return 5;
+}
+
+doSomething().then(function () {
+  return doSomethingElse();
+});
+
+doSomething().then(function () {
+  doSomethingElse();
+});
+
+doSomething().then(doSomethingElse());
+doSomething().then(doSomethingElse);
